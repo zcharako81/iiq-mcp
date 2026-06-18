@@ -9,6 +9,12 @@ class ScimError(Exception):
         self.detail = detail
         super().__init__(message)
 
+    def __str__(self) -> str:
+        parts = [super().__str__()]
+        if self.detail:
+            parts.append(self.detail)
+        return " — ".join(parts)
+
 
 class ScimAuthError(ScimError):
     """401 — bad credentials or session expired."""
@@ -27,7 +33,7 @@ class ScimServerError(ScimError):
 
 
 class ScimNetworkError(ScimError):
-    """Connection/timeout/transport errors."""
+    """Connection/timeout/transport errors (status_code is always None)."""
 
 
 class CredentialsNotFound(Exception):
