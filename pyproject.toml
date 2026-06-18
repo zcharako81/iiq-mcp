@@ -32,6 +32,7 @@ iiq-mcp = "iiq_mcp.cli:cli"
 
 [tool.setuptools]
 packages = ["iiq_mcp"]
+package-dir = {"" = "src"}
 
 [tool.ruff]
 target-version = "py311"
