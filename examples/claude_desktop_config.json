@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "iiq": {
+      "command": "iiq-mcp",
+      "args": ["serve"],
+      "env": {
+        "IIQ_BASE_URL": "https://iiq.acme.com",
+        "IIQ_USERNAME": "your-username"
+      }
+    }
+  }
+}

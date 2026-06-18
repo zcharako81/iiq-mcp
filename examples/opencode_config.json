@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "iiq": {
+      "type": "local",
+      "command": [
+        "iiq-mcp",
+        "serve"
+      ],
+      "env": {
+        "IIQ_BASE_URL": "https://iiq.acme.com",
+        "IIQ_USERNAME": "your-username"
+      },
+      "enabled": true
+    }
+  }
+}

@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "iiq-mcp"
+version = "0.1.0"
+description = "Model Context Protocol server for SailPoint IdentityIQ 8.5"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "IIQ MCP Contributors" }]
+
+dependencies = [
+    "click>=8.1",
+    "httpx>=0.27",
+    "mcp>=1.0",
+    "pydantic>=2.0",
+    "keyring>=24.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-asyncio>=0.23",
+    "respx>=0.21",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+iiq-mcp = "iiq_mcp.cli:cli"
+
+[tool.setuptools]
+packages = ["iiq_mcp"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[lint]
+select = ["E", "F", "W", "I", "N", "B", "SIM", "C4"]
+ignore = [
+    "E501",
+    "SIM117",
+]
+
+[format]
+preview = true
