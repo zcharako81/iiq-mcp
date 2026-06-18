@@ -5,11 +5,10 @@ from __future__ import annotations
 import keyring
 import pytest
 
-from iiq_mcp.auth import AuthManager, SERVICE_NAME
+from iiq_mcp.auth import AuthManager
 from iiq_mcp.errors import CredentialsNotFound
 
 from tests.conftest import (
-    _FAKE_KEYRING,
     fake_keyring_get_password,
     fake_keyring_set_password,
     fake_keyring_delete_password,
